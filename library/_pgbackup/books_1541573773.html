@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>My humble library</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="dashboard.css" rel="stylesheet">
+        <script src="scripts/scripts.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">My humble library</a>
+            <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+</li>
+            </ul>
+        </nav>
+        <div class="container-fluid">
+            <div class="row" id="mainWindow">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="authors.php">
+                                    Authors <span class="sr-only">(current)</span> </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="books.html">
+                                    Books </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-sm-0" id="main">
+                    <div class="quantity_selector input-group-text" style="float: right; margin-left: 2326px;">Show items:&nbsp; &nbsp; &nbsp; &nbsp;
+                        <button id="q10" value="10" class="btn btn-primary quantity" onclick="sendShowItems(this.id, this.className)" style="left: -21px; position: relative;">10</button>
+                        <button class="btn quantity" id="q20" value="20" onclick="sendShowItems(this.id, this.className)" style="position: relative; left: -14px;">20</button>
+                        <button class="btn quantity" id="q30" value="30" onclick="sendShowItems(this.id, this.className)" style="position: relative; left: -7px;">30</button>
+                    </div>
+                    <div id="bookWindow" style="float: left; clear: both;" class="form-inline">
+                        <!--
+                        <div id="book0" style="clear: both; float: left; width: 600px;" class="table-striped">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Time machine by Herbert Wells</th>
+                                        <th>Synopsis</th>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">
+                                            <img src="images/faces/timemachinebook.jpg">
+                                        </td>
+                                        <td class="align-text-top">The book's protagonist is an English scientist and gentleman inventor living in Richmond, Surrey, in Victorian England, and identified by a narrator simply as the Time Traveller. The narrator recounts the Traveller's lecture to his weekly dinner guests that time is simply a fourth dimension and his demonstration of a tabletop model machine for travelling through it. He reveals that he has built a machine capable of carrying a person through time, and returns at dinner the following week to recount a remarkable tale, becoming the new narrator.The book's protagonist is an English scientist and gentleman inventor living in Richmond, Surrey, in Victorian England, and identified by a narrator simply as the Time Traveller. The narrator recounts the Traveller's lecture to&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 378px; height: 40px;">
+                                            <button id="email" value="email" class="btn btn-block btn-primary">Get the Book!</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="book1" style="clear: both; float: left; width: 600px;" class="table-striped" <br="">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Time machine by Herbert Wells</th>
+                                        <th>Synopsis</th>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">
+                                            <img src="images/faces/timemachinebook.jpg">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 378px; height: 40px;">
+                                            <button value="email" class="btn btn-block btn-primary">Get the Book!</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="book2" style="clear: both; float: left; width: 600px;" class="table-striped">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Time machine by Herbert Wells</th>
+                                        <th>Synopsis</th>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">
+                                            <img src="images/faces/timemachinebook.jpg">
+                                        </td>
+                                        <td class="text-left align-text-top">The book's protagonist is an English scientist and gentleman inventor living in Richmond, Surrey, in Victorian England, and identified by a narrator simply as the Time Traveller. The narrator recounts the Traveller's lecture to his weekly dinner guests that time is simply a fourth dimension and his demonstration of a tabletop model machine for travelling through it. He reveals that he has built a machine capable of carrying a person through time, and returns at dinner the following week to recount a remarkable tale, becoming the new narrator.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button value="email" class="btn btn-block btn-primary">Get the Book!</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    -->
+                    </div>
+                </main>
+                <div id="paginator" class="fixed-bottom text-center bg-light">
+                    <!--    <button id="first_page" class="btn">&lt&lt</button>
+                        <button id="previous_page" class="btn">&lt</button>
+                        <button id="" class="btn btn-primary page" value="1" onclick="sendShowItems(this.id, this.className)">1</button>
+                        <button id="second" class="btn page" value="2" onclick="sendShowItems(this.id, this.className)">2</button>
+                        <button id="third" class="btn page" value="3" onclick="sendShowItems(this.id, this.className)">3</button>
+                        <button id="fourth" class="btn page" value="4" onclick="sendShowItems(this.id, this.className)">4</button>
+                        <button id="fifth" class="btn page" value="5" onclick="sendShowItems(this.id, this.className)">5</button>
+                        <button id="next_page" class="btn">&gt</button>
+                        <button id="last_page" class="btn">&gt&gt</button>-->
+                </div>
+            </div>
+        </div>
+
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                <span class="close">&times;</span>
+                <p class="text-center form-control-plaintext font-weight-bold">Enter your name and E-mail to get the book!</p>
+                <form action="" method="GET"></form>
+                <input type="text" placeholder="Name" name="name" class="input-group-text">
+                <input type="text" placeholder="E-mail" name="email" class="input-group-text">
+                <input type="hidden" id="linktobook">
+                <input type="submit" value="Submit" onclick="mailto()" id="submit" class="btn btn-primary">
+            </div>
+        </div>
+        <script>window.onload = function() {
+            //showItems = $("#q10").val();
+            showItemsId ="q10";
+            btnClass = "btn quantity";
+            //currentPage = "first";
+            sendShowItems(showItemsId,btnClass);
+        }
+        </script>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!--<script src="assets/js/jquery.min.js"></script>-->
+        <script src="assets/js/popper.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- Icons -->
+        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+        <script>feather.replace()</script>
+    </body>
+</html>
